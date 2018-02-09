@@ -84,7 +84,7 @@ app.patch('/todos/:id',(req,res)=>{
   if(!ObjectID.isValid(id)){
     return res.status(404).send();
   }
-  
+
   if(_.isBoolean(body.completed)&& body.completed){
     body.completedAt=new Date().getTime();
   }else{
@@ -102,7 +102,7 @@ app.patch('/todos/:id',(req,res)=>{
   });
 });
 
-app.listen(3000,() =>{
+app.listen(port,() =>{
   console.log('Started on port '+port);
 });
 module.exports={app};
